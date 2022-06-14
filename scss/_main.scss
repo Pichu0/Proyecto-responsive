@@ -1,0 +1,87 @@
+main{
+    @extend %placeholder1;
+    background-color: $colorPrincipal;
+    @include size (100%, auto);
+    /*inicio index*/
+    .contenedor-index{
+        @extend %placeholder1;
+        background-color: $colorPrincipal;
+        @include size (auto, auto);
+        .texto-principal p{
+            margin: 30px;
+            min-height: 50vh;
+            font-size: large;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            border: 10px ridge $colorSecundario;
+            grid-area: main;
+        }
+        .foto-principal{
+            grid-area: main;
+            img{
+                float: right;
+                margin: 10px;
+                max-height: 65vh;
+                border: $colorSecundario 1px double;
+            }
+            img:hover{
+                transform: scale(1.02,1.02);
+            }
+        }
+    }
+    /*final index*/
+    /*inicio trayectoria*/
+    .contenedor-trayectoria{
+        @extend %placeholder1;
+        .izquierda-trayectoria{
+            display: block;
+            @include size (50% , auto);
+            margin-left: 100px;
+            margin-top: 10px;
+            .tabla{
+                border: $colorSecundario 5px inset;
+                @include size (50%, auto);
+                margin-top: 10px;
+                grid-area: main;
+                th, td{
+                    border: solid 1px $colorLink;
+                    padding: 5px;
+                }
+            }
+            .imagen-trayectoria img{
+                @extend %placeholder1;
+                justify-content: left;
+                margin-top: 30px;
+                border: $colorSecundario 5px outset;
+                margin-left: 150px;
+                margin-bottom: 60px;
+                grid-area: main;
+            }
+            .imagen-trayectoria img:hover{
+                transform: skewX(10deg);
+            }
+        }
+        .palmares{
+            justify-content: right;
+            margin: 10px;
+            padding: 5px;
+            border: $colorSecundario 10px ridge;
+            grid-area: main;
+            h2{
+                text-align: center;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow',     Arial, sans-serif;
+                font-size: 2em;
+                color: $colorTerciario;
+            }
+            ul li{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: medium;
+                list-style-type: square;
+                list-style-position: inside;
+                margin-top: 10px;
+            }
+        }
+    }
+    /*final trayectoria**/
+}
